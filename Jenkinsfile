@@ -9,15 +9,10 @@ pipeline {
         stage('Clone') {
             steps {
                 container('docker') {
+                    sh 'docker --version'
+                    sh 'sudo usermod -a -G docker jenkins'
                     sh 'docker pull busybox:uclibc'
                 }
-            }
-        }
-    }
-    post {
-        always {
-            container('docker') {
-                sh 'docker --version'
             }
         }
     }
