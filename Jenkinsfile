@@ -1,7 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            defaultContainer 'maven'
+            defaultContainer 'docker'
             yamlFile 'PodTemplate.yml'
         }
     }
