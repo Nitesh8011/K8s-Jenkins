@@ -10,7 +10,7 @@ pipeline {
             steps {
                 container('docker') {
                     sh 'docker --version'
-                    sh 'chmod 777 /var/run/docker.sock'
+                    sh 'sudo chmod 777 /var/run/docker.sock'
                     sh 'docker pull busybox:uclibc'
                 }
             }
